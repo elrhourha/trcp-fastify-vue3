@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES5",                       // Set the output target to ES5 for compatibility.
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".src",
+    "composite": true
+  },
+  "exclude": ["node_modules", "dist"]
+}
