@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES5",                       // Set the output target to ES5 for compatibility.
+    "target": "ES5",
     "module": "CommonJS",
     "moduleResolution": "node",
     "strict": true,
@@ -9,10 +9,13 @@
     "forceConsistentCasingInFileNames": true,
     "rootDir": "src",
     "outDir": "./dist",
+    "baseUrl": ".",                   // Base URL set to 'src'
+    "paths": {       // Add any other alias as needed
+      "*": ["./src/*"]                         // Fallback for all other paths
+    },
     "declaration": true,
-    "declarationMap": true,
-    "baseUrl": ".src",
-    "composite": true
+    "declarationDir": "./dist",
+    "preserveSymlinks": false
   },
   "exclude": ["node_modules", "dist"]
 }
