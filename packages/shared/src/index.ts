@@ -1,10 +1,5 @@
-export interface User {
-    firstName: string;
-    lastName: string;
-    email: string;
-    isAdmin: boolean;
-}
-
+import {User} from "./types/user.type";
+export type {User} from "./types/user.type";
 export function greetUser(user: User) {
     console.log(
         `Hello, ${user.firstName} ${user.lastName}! You are ${

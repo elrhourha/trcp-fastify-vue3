@@ -4,4 +4,3 @@ export interface User {
     email: string;
     isAdmin: boolean;
 }
-export declare function greetUser(user: User): void;
