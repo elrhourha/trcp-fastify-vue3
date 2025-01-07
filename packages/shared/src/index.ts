@@ -1,6 +1,7 @@
-import {User} from "model/user.type";
-export type {User} from "model/user.type";
-export {default as config} from "constants"
+//import 'module-alias/register.js'
+import {User} from "@/model/user.type";
+import user from "@/model/user.type";
+export type {User} from "@/model/user.type";
 export function greetUser(user: User) {
     console.log(
         `Hello, ${user.firstName} ${user.lastName}! You are ${
@@ -8,3 +9,5 @@ export function greetUser(user: User) {
         }`
     );
 }
+
+greetUser(user)

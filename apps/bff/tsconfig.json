@@ -7,7 +7,10 @@
     "outDir": "./dist",                            // Output directory for compiled files
     "declaration": true,                           // Generate declaration files
     "declarationMap": true,                        // Generate declaration maps
-    "baseUrl": "./"                           // Base path for resolving non-relative imports
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "src/**/*",                                    // Include all files under `src`

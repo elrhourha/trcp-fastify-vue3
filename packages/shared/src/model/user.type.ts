@@ -4,3 +4,10 @@ export interface User {
     email: string;
     isAdmin: boolean;
 }
+
+export default {
+    firstName: "John",
+    lastName: "Doe",
+    email: "john@doe.com",
+    isAdmin: false,
+}

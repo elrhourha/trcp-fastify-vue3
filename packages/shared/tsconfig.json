@@ -11,7 +11,7 @@
     "outDir": "./dist",
     "baseUrl": ".",                   // Base URL set to 'src'
     "paths": {       // Add any other alias as needed
-      "*": ["./src/*"]                         // Fallback for all other paths
+      "@/*": ["./src/*"],           // Fallback for all other paths
     },
     "declaration": true,
     "declarationDir": "./dist",
