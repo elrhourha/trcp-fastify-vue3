@@ -1,5 +1,5 @@
-import { createTRPCProxyClient, httpBatchLink } from '@trpc/client';
-import type { AppRouter } from '@trcp-fastify-vue3/bff';
+import { createTRPCProxyClient, httpBatchLink } from '@trpc/client'
+import type { AppRouter } from '@trcp-fastify-vue3/bff'
 
 export const trpc = createTRPCProxyClient<AppRouter>({
   links: [
@@ -7,5 +7,4 @@ export const trpc = createTRPCProxyClient<AppRouter>({
       url: import.meta.env.VITE_API_URL,
     }),
   ],
-});
-
+})

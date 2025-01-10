@@ -1,3 +1,3 @@
-import {trpc} from "@/api/trpc.client.ts";
+import { trpc } from '@/api/trpc.client.ts'
 
-export const userApi = trpc;
+export const userApi = trpc
