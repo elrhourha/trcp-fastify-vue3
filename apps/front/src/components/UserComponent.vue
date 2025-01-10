@@ -2,16 +2,16 @@
 import {useMutation, useQuery} from '@tanstack/vue-query';
 import {userApi} from "@/api/user.api.ts";
 import {ref, unref} from "vue";
-import type {User} from "@trcp-fastify-vue3/shared";
+import type {User,CreateUserInput} from "@trcp-fastify-vue3/bff";
 
 const {data, isLoading} = useQuery({
   queryKey: ['user', 1],
-  queryFn: () => userApi.getUser.query('1')
+  queryFn: () => userApi.user.getUser.query('1')
 })
 
 
-const createUser = useMutation({
-  mutationFn: (user: User) => userApi.createUser.mutate(user),
+const createUser = useMutation<void,Error,CreateUserInput>({
+  mutationFn: (user: User) => userApi.user.createUser.mutate(user).then(),
   onSuccess: (_,user : User) => {
     users.value.push(user)
   },

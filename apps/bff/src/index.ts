@@ -1,33 +1,24 @@
-import {
-    fastifyTRPCPlugin,
-    FastifyTRPCPluginOptions,
-} from '@trpc/server/adapters/fastify';
-import fastify from 'fastify';
-import {createContext} from '@/routers/context';
-import {router, type AppRouter} from '@/routers/router';
-import fastifyCors from '@fastify/cors';
+import {appRouter, server} from "@/app";
+import {fastifyTRPCPlugin, FastifyTRPCPluginOptions} from "@trpc/server/adapters/fastify";
+import {createContext} from "@/trpc/context";
+export * from '@/user';
+export * from '@/todo';
 
 
-export type {AppRouter};
-
-const server = fastify({
-    maxParamLength: 5000,
-});
-
-server.register(fastifyCors, {
-    origin: '*',
-});
+type AppRouter = typeof appRouter;
 
 server.register(fastifyTRPCPlugin, {
     prefix: '/trpc',
     trpcOptions: {
-        router,
+        router:appRouter,
         createContext,
         onError({path, error}) {
             console.error(`Error in tRPC handler on path '${path}':`, error);
         },
     } satisfies FastifyTRPCPluginOptions<AppRouter>['trpcOptions'],
 });
+
+
 (async () => {
     try {
         await server.listen({port: 3000});
@@ -38,4 +29,4 @@ server.register(fastifyTRPCPlugin, {
     }
 })();
 
-
+export type {AppRouter};
