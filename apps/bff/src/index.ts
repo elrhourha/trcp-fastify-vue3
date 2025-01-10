@@ -4,8 +4,8 @@ import {createContext} from "@/trpc/context";
 export * from '@/user';
 export * from '@/todo';
 
-
 type AppRouter = typeof appRouter;
+
 
 server.register(fastifyTRPCPlugin, {
     prefix: '/trpc',
