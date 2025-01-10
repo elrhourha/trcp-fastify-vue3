@@ -8,7 +8,6 @@ export default defineConfig({
     dts: true, // Generate TypeScript declaration files
     sourcemap: true, // Generate sourcemaps
     clean: true, // Clean the output directory before building,
-    splitting: true,
     minify:true,
     bundle: true,
     esbuildOptions(options) {

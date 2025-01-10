@@ -1,17 +1,18 @@
 import { initTRPC } from '@trpc/server';
 import { z } from 'zod';
+import {CreateUserInput, createUserSchema} from "@trcp-fastify-vue3/shared";
 
 const t = initTRPC.create()
 
 export const router = t.router({
     getUser: t.procedure.input(z.string()).query(async (opts) => {
-        // Simulating fetching user
         return { id: opts.input, name: 'Backend User ' + opts.input };
     }),
     createUser: t.procedure
-        .input(z.object({ name: z.string().min(3), age: z.number().min(18) }))
+        .input(createUserSchema)
         .mutation(async (opts) => {
-            return { message: `User ${opts.input.name} created successfully!` };
+            const userInput : CreateUserInput = opts.input;
+            return { message: `User ${userInput.name} created successfully!` };
         }),
 });
 

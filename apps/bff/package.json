@@ -10,6 +10,7 @@
     "start": "pnpm build && node dist/index.js"
   },
   "dependencies": {
+    "@fastify/cors": "^10.0.2",
     "@trcp-fastify-vue3/shared": "workspace:*",
     "@trpc/server": "^10.45.2",
     "fastify": "^5.2.0",

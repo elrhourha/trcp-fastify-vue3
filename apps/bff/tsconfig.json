@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ESNext",                            // Retain target as ESNext for modern JS features
-    "module": "CommonJS",                          // Change module system to CommonJS
-    "moduleResolution": "node",                    // Use Node.js-style module resolution
-    "esModuleInterop": true,                       // Ensure interoperability with CommonJS modules
-    "outDir": "./dist",                            // Output directory for compiled files
-    "declaration": true,                           // Generate declaration files
-    "declarationMap": true,                        // Generate declaration maps
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,                // Generate declaration maps
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
